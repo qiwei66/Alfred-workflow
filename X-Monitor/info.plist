@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfred.x-monitor</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>0A1B2C3D-4E5F-6789-ABCD-EF0123456789</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A2B3C4D-5E6F-7890-ABCD-EF0123456790</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoaliases</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2A3B4C5D-6E7F-8901-BCDE-F01234567891</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3A4B5C6D-7E8F-9012-CDEF-012345678912</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoaliases</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4A5B6C7D-8E9F-0123-DEF0-123456789123</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A6B7C8D-9E0F-1234-EF01-234567891234</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoaliases</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6A7B8C9D-0E1F-2345-F012-345678912345</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7A8B9C0D-1E2F-3456-0123-456789123456</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoaliases</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>X Monitor</string>
+	<key>description</key>
+	<string>Monitor X (Twitter) accounts and get notifications for new tweets</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>X Monitor</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>xcheck</string>
+				<key>subtext</key>
+				<string>Check all monitored X accounts for new tweets</string>
+				<key>text</key>
+				<string>X Monitor - Check Now</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0A1B2C3D-4E5F-6789-ABCD-EF0123456789</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 "{query}/x_monitor.py"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1A2B3C4D-5E6F-7890-ABCD-EF0123456790</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>xadd</string>
+				<key>subtext</key>
+				<string>Add an X account to monitor (e.g., @elonmusk)</string>
+				<key>text</key>
+				<string>X Monitor - Add Account</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2A3B4C5D-6E7F-8901-BCDE-F01234567891</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 "$(dirname "$0")/x_monitor.py" --add "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3A4B5C6D-7E8F-9012-CDEF-012345678912</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>xremove</string>
+				<key>subtext</key>
+				<string>Remove an X account from monitoring</string>
+				<key>text</key>
+				<string>X Monitor - Remove Account</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4A5B6C7D-8E9F-0123-DEF0-123456789123</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 "$(dirname "$0")/x_monitor.py" --remove "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5A6B7C8D-9E0F-1234-EF01-234567891234</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>xlist</string>
+				<key>subtext</key>
+				<string>List all monitored X accounts</string>
+				<key>text</key>
+				<string>X Monitor - List Accounts</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6A7B8C9D-0E1F-2345-F012-345678912345</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 "$(dirname "$0")/x_monitor.py" --list</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7A8B9C0D-1E2F-3456-0123-456789123456</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>X Monitor - Alfred Workflow
+
+Monitor X (Twitter) accounts and receive macOS notifications for new tweets.
+
+COMMANDS:
+- xcheck: Check all monitored accounts for new tweets
+- xadd @username: Add an account to monitor
+- xremove @username: Remove an account from monitoring
+- xlist: List all monitored accounts
+
+SETUP:
+1. Double-click the workflow to install
+2. Run the setup.sh script to enable automatic background checking
+3. Use xadd @username to add accounts to monitor
+
+The workflow uses RSSHub to fetch tweets without requiring API keys.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0A1B2C3D-4E5F-6789-ABCD-EF0123456789</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>1A2B3C4D-5E6F-7890-ABCD-EF0123456790</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>2A3B4C5D-6E7F-8901-BCDE-F01234567891</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>3A4B5C6D-7E8F-9012-CDEF-012345678912</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>4A5B6C7D-8E9F-0123-DEF0-123456789123</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>5A6B7C8D-9E0F-1234-EF01-234567891234</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>6A7B8C9D-0E1F-2345-F012-345678912345</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>7A8B9C0D-1E2F-3456-0123-456789123456</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/qiwei66/Alfred-workflow</string>
+</dict>
+</plist>
